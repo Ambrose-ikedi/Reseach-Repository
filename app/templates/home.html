@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>All Research</h2>
+
+<form method="GET" action="/search">
+    <input type="text" name="q" placeholder="Search">
+    <button>Search</button>
+</form>
+
+<ul>
+{% for r in research %}
+<li>{{ r.title }} - {{ r.author }} ({{ r.category }})
+    <a href="/app/uploads/{{ r.filename }}">Download</a>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}

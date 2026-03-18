@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Search Results</h2>
+
+<ul>
+{% for r in results %}
+<li>{{ r.title }} - {{ r.author }}
+    <a href="/app/uploads/{{ r.filename }}">Download</a>
+</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
